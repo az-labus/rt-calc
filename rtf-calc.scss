@@ -10,14 +10,10 @@ body {
 
 }
 
-h1, h2, span, p, img {
+span, p, img {
     color: #fff;
     text-stroke: .3em rgba(255, 255, 255, .2);
     -webkit-text-stroke: .3em rgba(255, 255, 255, .2);
-}
-
-h1 {
-    font-size: 4rem;
 }
 
 header > div {
@@ -26,6 +22,8 @@ header > div {
         padding: 2.5rem 0 0;
         line-height: 4rem;
         margin: 0;
+        font-size: 4rem;
+        word-wrap: break-word;
 
         span {
             display: inline-block;

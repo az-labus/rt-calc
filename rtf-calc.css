@@ -8,14 +8,10 @@ body {
   height: 80%;
 }
 
-h1, h2, span, p, img {
+span, p, img {
   color: #fff;
   text-stroke: 0.3em rgba(255, 255, 255, 0.2);
   -webkit-text-stroke: 0.3em rgba(255, 255, 255, 0.2);
-}
-
-h1 {
-  font-size: 4rem;
 }
 
 header > div h1 {
@@ -23,6 +19,8 @@ header > div h1 {
   padding: 2.5rem 0 0;
   line-height: 4rem;
   margin: 0;
+  font-size: 4rem;
+  word-wrap: break-word;
 }
 header > div h1 span {
   display: inline-block;
