@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 10% 5%;
+  background: #235070 url("./image/background.png") no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  width: 90%;
+  height: 80%;
+}
+
+h1, h2, span, p, img {
+  color: #fff;
+  text-stroke: 0.3em rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 0.3em rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+header > div h1 {
+  display: inline-block;
+  padding: 2.5rem 0 0;
+  line-height: 4rem;
+  margin: 0;
+}
+header > div h1 span {
+  display: inline-block;
+}
+header > div h1 span.small {
+  font-size: 2rem;
+  vertical-align: -moz-middle-with-baseline;
+  vertical-align: -webkit-baseline-middle;
+}
+header > div p {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=rtf-calc.css.map */
