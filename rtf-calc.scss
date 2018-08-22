@@ -10,7 +10,7 @@ body {
 
 }
 
-span, p, img {
+span, p, img, em {
     color: #fff;
     text-stroke: .3em rgba(255, 255, 255, .2);
     -webkit-text-stroke: .3em rgba(255, 255, 255, .2);
@@ -36,4 +36,22 @@ header > div {
         }
     }
     p { font-size: 1.4rem; }
+}
+
+section {
+
+    padding: 20px 0;
+
+}
+
+footer {
+
+    img {
+        min-width: 6rem;
+        width: 5vw;
+    }
+    span {
+        margin-left: 15px;
+    }
+
 }
