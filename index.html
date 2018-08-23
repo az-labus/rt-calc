@@ -13,6 +13,8 @@
     <title>로테이션을 찾아라! 계산기</title>
     <link href="./favicon.ico" rel="shortcut icon">
     <link href="./rtf-calc.min.css" rel="stylesheet">
+    <script src="./jquery.js"></script>
+    <script src="./rtf-calc.js"></script>
 </head>
 <body>
     <main>
@@ -29,7 +31,24 @@
                     <p>이 페이지는 JavaScript가 필수입니다!</p>
                 </section>
             </noscript>
+            <section class="history">
+                <h2>기록</h2>
+                <table class="history-table">
+                    <tr>
+                        <th rowspan="2">회차</th>
+                        <th class="result">결과</th>
+                    </tr>
+                    <tr class="servers">
+
+                    <tr>
+                </table>
+            </section>
             <section class="calculation">
+                <h2>계산</h2>
+                <section class="example-answer">
+                </section>
+                <section class="expecting-answer">
+                </section>
             </section>
             <footer>
                 <img src="./image/white.png" alt="벽람항로 레이버스 함대">
@@ -37,6 +56,5 @@
             </footer>
         </article>
     </main>
-    <script src="/hist.js"></script>
 </body>
 </html>

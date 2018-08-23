@@ -1,5 +1,13 @@
-body {
+$wtr: rgba(255, 255, 255, .2);
 
+%text {
+    color: #fff;
+    text-stroke: .3em $wtr;
+    -webkit-text-stroke: .3em $wtr;
+    word-wrap: break-word;
+}
+
+body {
     margin: 0;
     padding: 10% 5%;
     background: #235070 url("./image/background.png") no-repeat;
@@ -7,14 +15,10 @@ body {
     font-size: 14px;
     width: 90%;
     height: 80%;
-
 }
 
 span, p, img, em {
-    color: #fff;
-    text-stroke: .3em rgba(255, 255, 255, .2);
-    -webkit-text-stroke: .3em rgba(255, 255, 255, .2);
-    word-wrap: break-word;
+    @extend %text;
 }
 
 header > div {
@@ -36,23 +40,43 @@ header > div {
             }
         }
     }
+
     p { font-size: 1.4rem; }
 }
 
 section {
+    padding: 20px 20px 20px 0;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: top;
 
-    padding: 20px 0;
+    &:not(:last-of-type) {
+        border-right: 1px solid $wtr;
+    }
 
+    section {
+        border: none !important;
+    }
+
+    h2, h3 {
+        @extend %text;
+        color: #fff;
+    }
+
+    h2 {
+        font-size: 2rem;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 footer {
-
     img {
         min-width: 6rem;
         width: 5vw;
     }
+
     span {
         margin-left: 15px;
     }
-
 }
