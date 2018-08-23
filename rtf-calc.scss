@@ -21,6 +21,7 @@ body {
     font-size: 14px;
     width: 90%;
     height: 80%;
+    overflow-x: hidden;
 }
 
 span, p, img, em {
@@ -94,16 +95,14 @@ section {
         section.example-answer {
             padding-right: 75px;
             position: relative;
-            width: 175px;
-            max-width: calc(90vw - 10px);
+            width: calc(90vw - 60px);
         }
 
         section.expecting-answer {
             padding-right: 75px;
             margin: 0;
             position: relative;
-            width: 175px;
-            max-width: calc(90vw - 10px);
+            width: calc(90vw - 60px);
         }
 
         section.result {

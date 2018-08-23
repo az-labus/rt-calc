@@ -19,6 +19,7 @@ body {
   font-size: 14px;
   width: 90%;
   height: 80%;
+  overflow-x: hidden;
 }
 
 header > div h1 {
@@ -76,15 +77,13 @@ section.calculation .server > *, section.calculation .answer > * {
 section.calculation section.example-answer {
   padding-right: 75px;
   position: relative;
-  width: 175px;
-  max-width: calc(90vw - 10px);
+  width: calc(90vw - 60px);
 }
 section.calculation section.expecting-answer {
   padding-right: 75px;
   margin: 0;
   position: relative;
-  width: 175px;
-  max-width: calc(90vw - 10px);
+  width: calc(90vw - 60px);
 }
 section.calculation section.result h3, section.calculation section.result p {
   display: inline-block;
