@@ -43,7 +43,7 @@
                                 <th class="result">결과</th>
                             </tr>
                             <tr class="servers"></tr>
-                            <tr class="sep-container"><td class="sep"></td></tr>
+                            <tr class="sep-container"><td class="sep" colspan="2"></td></tr>
                         </thead>
                         <tbody class="history-tbody">
                         </tbody>
@@ -52,8 +52,24 @@
             </section>
             <section class="calculation">
                 <h2>계산</h2>
-                <section class="example-answer"></section>
-                <section class="expecting-answer"></section>
+                <section class="example-answer">
+                    <h3>예시 정답</h3>
+                    <button class="retry"><img src="./image/retry.png"></button>
+                </section>
+                <section class="expecting-answer">
+                    <h3>예측 입력</h3>
+                    <button class="calculate"><span>계산</span></button>
+                </section>
+                <section class="result">
+                    <h3>= <span class="score">???</span>점</h3>
+                    <p class="error"></p>
+                </section>
+            </section>
+            <section class="introduction">
+                <h2>계산법</h2>
+                <p>먼저, 각 서버별로 정확히 맞히면 <b>+4점</b>을 지급합니다.</p>
+                <p>정답을 맞히지 못한 <u>나머지 서버들 끼리</u>는 같은 서버가 아니더라도 <u>나머지 서버들 끼리</u>의 답변 목록 중에 답이 있으면 <b>+2점</b>을 지급합니다.</p>
+                <p>그래도 점수가 부여되지 않은 서버들에 대해서는, <u>전체 답변 목록</u> 중에 답이 있으면 <b>+1점</b>을 지급합니다.</p>
             </section>
             <footer>
                 <img src="./image/white.png" alt="벽람항로 레이버스 함대">

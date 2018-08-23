@@ -7,28 +7,126 @@ jQuery(document).ready(function($) {
     var serverList = ["명량", "노량", "한산도", "옥계"];
     var rotationList = ["샌디에이고", "타카오", "프린츠오이겐", "후드", "워스파이트", "엔터프라이즈", "일러스트리어스"];
 
-    var serverDiv = $("section.example-answer");
+    var serverBtn = $("button.retry");
     var expectingDiv = $("section.expecting-answer");
 
     // Add Calculator DOM
     serverList.forEach(function(s) {
 
         var tempServerDOM
-            = "<div class='server'>"
-                + "<h3>" + s + "</h3>"
+            = "<div class='server' data-name='" + s + "'>"
+                + "<h4>" + s + "</h4>"
+                + "<p class='example'></p>"
             + "</div>"
             ;
 
         var tempExpDOM
-            = "<div class='answer'>"
-                + "<h3>" + s + "</h3>"
+            = "<div class='answer' data-name='" + s + "'>"
+                + "<h4>" + s + "</h4>"
             + "</div>"
             ;
 
-        serverDiv.append(tempServerDOM);
+        $(tempServerDOM).insertBefore(serverBtn);
         expectingDiv.append(tempExpDOM);
 
     });
+
+    // Set examples
+    var exampleList = {};
+    var shuffle = function () {
+
+        exampleList = {};
+        serverList.forEach(function (s) {
+
+            exampleList[s] = rotationList[Math.floor(Math.random() * rotationList.length)];
+
+            $(document.querySelector("div.server[data-name=" + s + "] > p.example")).text(exampleList[s]);
+
+        });
+
+        $(document.activeElement).blur();
+
+    };
+    shuffle();
+    serverBtn.click(shuffle);
+
+    // Add selections
+    var optionDOM = "<option value='!'>선택</option>";
+    rotationList.forEach(function (r) {
+        optionDOM += "<option value='" + r + "'>" + r + "</option>";
+    });
+    serverList.forEach(function (s) {
+        $(document.querySelector("div.answer[data-name=" + s + "]")).append(
+            "<select data-name='" + s + "'>" + optionDOM + "</select>"
+        );
+    });
+
+    // Add Calculation Function
+    var calculate = function () {
+
+        var input = {};
+
+        // Gather answer
+        serverList.forEach(function (s) {
+
+            var value = $(document.querySelector("div.answer[data-name=" + s + "] > select")).val();
+
+            if (value !== "!") {
+
+                input[s] = value;
+
+            }
+
+        });
+
+        // Calculate score
+        if (Object.keys(input).length !== Object.keys(serverList).length) {
+
+            $("p.error").text("모든 서버를 올바로 입력해주세요.");
+            $("span.score").text("???");
+
+        } else {
+
+            $("p.error").text("");
+
+            var score = 0;
+            var remainedList = {};
+            var remainedInput = {};
+
+            $.each(exampleList, function (k, v) {
+
+                if (input[k] == v) {// Perfect Answer
+
+                    score += 4;
+
+                } else {
+                    remainedList[k] = v;
+                    remainedInput[k] = input[k];
+                }
+
+            });
+
+            var answerValuePool = Object.values(remainedInput);
+            var originValuePool = Object.values(input);
+
+            $.each(remainedList, function (k, v) {
+
+
+                if (answerValuePool.includes(v)) // Unfortunate Answer (High)
+                    score += 2;
+                else if (originValuePool.includes(v)) // Unfortunate Answer(Low)
+                    score += 1;
+
+            });
+
+            $("span.score").text(score.toString());
+
+        }
+
+        $(document.activeElement).blur();
+
+    };
+    $("button.calculate").click(calculate);
 
     var table = $("tbody.history-tbody");
     var sTH = $("th.result");

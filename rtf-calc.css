@@ -1,4 +1,4 @@
-section.history > .table-container table th, section.history > .table-container table td:not(.sep), section h2, section h3, span, p, img, em {
+section.history > .table-container table th, section.history > .table-container table td:not(.sep), section h2, section h3, section h4, span, p, img, em {
   color: #fff;
   text-stroke: 0.3em rgba(255, 255, 255, 0.2);
   -webkit-text-stroke: 0.3em rgba(255, 255, 255, 0.2);
@@ -31,9 +31,10 @@ header > div h1 {
 }
 header > div h1 span {
   display: inline-block;
+  vertical-align: sub;
 }
 header > div h1 span.small {
-  font-size: 2rem;
+  font-size: 3rem;
   vertical-align: -moz-middle-with-baseline;
   vertical-align: -webkit-baseline-middle;
 }
@@ -53,13 +54,81 @@ section:not(:last-of-type) {
 section section {
   border: none !important;
 }
-section h2, section h3 {
+section h2, section h3, section h4 {
   color: #fff;
 }
 section h2 {
   font-size: 2rem;
   padding: 0;
   margin: 0;
+}
+section.introduction {
+  width: 360px;
+  max-width: calc(90vw - 10px);
+}
+section.calculation .result {
+  display: block;
+  padding: 0;
+}
+section.calculation .server > *, section.calculation .answer > * {
+  display: inline-block;
+}
+section.calculation section.example-answer {
+  padding-right: 75px;
+  position: relative;
+  width: 175px;
+  max-width: calc(90vw - 10px);
+}
+section.calculation section.expecting-answer {
+  padding-right: 75px;
+  margin: 0;
+  position: relative;
+  width: 175px;
+  max-width: calc(90vw - 10px);
+}
+section.calculation section.result h3, section.calculation section.result p {
+  display: inline-block;
+}
+section.calculation section.result h3 {
+  margin-right: 10px;
+}
+section.calculation section > div {
+  height: 2rem;
+}
+section.calculation h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+}
+section.calculation h4 {
+  margin: 5px 15px 5px 0;
+}
+section.calculation p {
+  margin: 5px 0;
+}
+section.calculation button {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 10px;
+  line-height: 14px;
+  transition: background-color 0.4s, border-color 0.4s;
+  cursor: pointer;
+}
+section.calculation button:hover, section.calculation button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+section.calculation button img {
+  height: 14px;
+  vertical-align: middle;
+}
+section.calculation button span {
+  font-size: 14px;
+  vertical-align: middle;
 }
 section.history > .table-container {
   margin-top: 24px;
