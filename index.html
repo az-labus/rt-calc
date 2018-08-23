@@ -12,7 +12,9 @@
     <meta property="og:description" content="레이버스 이벤트 <로테이션을 찾아라!> 점수 계산기">
     <title>로테이션을 찾아라! 계산기</title>
     <link href="./favicon.ico" rel="shortcut icon">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1:400,800&amp;subset=korean" rel="stylesheet">
     <link href="./rtf-calc.min.css" rel="stylesheet">
+    <script src="./bluebird.js"></script>
     <script src="./jquery.js"></script>
     <script src="./rtf-calc.js"></script>
 </head>
@@ -33,15 +35,16 @@
             </noscript>
             <section class="history">
                 <h2>기록</h2>
-                <table class="history-table">
-                    <tr>
-                        <th rowspan="2">회차</th>
-                        <th class="result">결과</th>
-                    </tr>
-                    <tr class="servers">
-
-                    <tr>
-                </table>
+                <div class="table-container">
+                    <table class="history-table">
+                        <tr>
+                            <th class="times" rowspan="2">회차</th>
+                            <th class="result">결과</th>
+                        </tr>
+                        <tr class="servers"></tr>
+                        <tr class="sep-container"><td class="sep"></td></tr>
+                    </table>
+                </div>
             </section>
             <section class="calculation">
                 <h2>계산</h2>

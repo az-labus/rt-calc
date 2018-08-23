@@ -5,6 +5,12 @@ $wtr: rgba(255, 255, 255, .2);
     text-stroke: .3em $wtr;
     -webkit-text-stroke: .3em $wtr;
     word-wrap: break-word;
+    font-family: 'Gothic A1', sans-serif;
+}
+
+%no-stroke {
+    text-stroke: 0 !important;
+    -webkit-text-stroke: 0 !important;
 }
 
 body {
@@ -68,9 +74,42 @@ section {
         padding: 0;
         margin: 0;
     }
+
+    &.history > .table-container {
+        margin-top: 24px;
+        padding: 5px 8px;
+        border-radius: 3px;
+        background-color: $wtr;
+
+        table {
+
+            th, td:not(.sep) {
+                @extend %text;
+                @extend %no-stroke;
+                color: #fff;
+                text-align: left;
+                margin: 5px;
+                line-height: 1.2rem;
+                font-size: 1rem;
+                vertical-align: top;
+                padding: 5px 20px 5px 5px;
+            }
+
+            tr.servers > th {
+                font-weight: 400;
+            }
+
+            tr.sep-container {
+                background-color: #fff;
+                height: 1px;
+            }
+        }
+    }
 }
 
 footer {
+    margin-top: 20px;
+
     img {
         min-width: 6rem;
         width: 5vw;
