@@ -64,7 +64,7 @@ section h2 {
   margin: 0;
 }
 section.introduction {
-  width: 360px;
+  width: 240px;
   max-width: calc(90vw - 10px);
 }
 section.calculation .result {
@@ -78,12 +78,14 @@ section.calculation section.example-answer {
   padding-right: 75px;
   position: relative;
   width: calc(90vw - 60px);
+  max-width: 240px;
 }
 section.calculation section.expecting-answer {
   padding-right: 75px;
   margin: 0;
   position: relative;
   width: calc(90vw - 60px);
+  max-width: 240px;
 }
 section.calculation section.result h3, section.calculation section.result p {
   display: inline-block;
