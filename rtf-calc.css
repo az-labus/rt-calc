@@ -81,7 +81,7 @@ section.calculation .result {
   display: block;
   padding: 0;
 }
-section.calculation .server > *, section.calculation .answer > * {
+section.calculation div.server > *, section.calculation div.answer > * {
   display: inline-block;
 }
 section.calculation section.expecting-answer {
