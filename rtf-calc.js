@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
     });
 
-    var table = $("table.history-table");
+    var table = $("tbody.history-tbody");
     var sTH = $("th.result");
     var sTR = $("tr.servers");
     var sep = $("td.sep");
