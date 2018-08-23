@@ -39,6 +39,9 @@ header > div h1 span.small {
   vertical-align: -moz-middle-with-baseline;
   vertical-align: -webkit-baseline-middle;
 }
+header > div h1 span.version {
+  font-size: 0.8rem;
+}
 header > div p {
   font-size: 1.4rem;
 }
