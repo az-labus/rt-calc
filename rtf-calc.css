@@ -52,6 +52,11 @@ section {
 section:not(:last-of-type) {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+@media screen and (max-width: 799px) {
+  section:not(:last-of-type) {
+    border-right: none !important;
+  }
+}
 section section {
   border: none !important;
 }
@@ -67,6 +72,11 @@ section.introduction {
   width: 280px;
   max-width: calc(90vw - 10px);
 }
+@media screen and (max-width: 799px) {
+  section.introduction {
+    width: calc(90vw - 10px);
+  }
+}
 section.calculation .result {
   display: block;
   padding: 0;
@@ -78,14 +88,14 @@ section.calculation section.example-answer {
   padding-right: 75px;
   position: relative;
   width: calc(90vw - 60px);
-  max-width: 210px;
+  max-width: 180px;
 }
 section.calculation section.expecting-answer {
   padding-right: 75px;
   margin: 0;
   position: relative;
   width: calc(90vw - 60px);
-  max-width: 210px;
+  max-width: 180px;
 }
 section.calculation section.result h3, section.calculation section.result p {
   display: inline-block;

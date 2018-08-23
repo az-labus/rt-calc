@@ -60,6 +60,9 @@ section {
 
     &:not(:last-of-type) {
         border-right: 1px solid $wtr;
+        @media screen and (max-width: 799px) {
+            border-right: none !important;
+        }
     }
 
     section {
@@ -80,6 +83,9 @@ section {
     &.introduction {
         width: 280px;
         max-width: calc(90vw - 10px);
+        @media screen and (max-width: 799px) {
+            width: calc(90vw - 10px);
+        }
     }
 
     &.calculation {
@@ -96,7 +102,7 @@ section {
             padding-right: 75px;
             position: relative;
             width: calc(90vw - 60px);
-            max-width: 210px;
+            max-width: 180px;
         }
 
         section.expecting-answer {
@@ -104,7 +110,7 @@ section {
             margin: 0;
             position: relative;
             width: calc(90vw - 60px);
-            max-width: 210px;
+            max-width: 180px;
         }
 
         section.result {
