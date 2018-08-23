@@ -10,13 +10,10 @@ if (!Array.prototype.includes) {
     });
 }
 if (!Object.prototype.values) {
-    Object.prototype.values = function(obj) {
-        var res = [];
-        for (var i in obj) {
-            if (obj.hasOwnProperty(i)) {
-                res.push(obj[i]);
-            }
+    Object.defineProperty(Object.prototype, "values", {
+        enumerable: false,
+        value: function(obj) {
+            return Object.keys(obj).map(function(e) {return obj[e];});
         }
-        return res;
-    };
+    });
 }
