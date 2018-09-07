@@ -144,12 +144,11 @@ jQuery(document).ready(function($) {
 
             index = data;
 
-            var tempC = data.start;
+            var tempC = 0;
 
-            // Fetch data and set server list
-            for (var i = data.start; i <= data.end; i++) {
+            var processHistory = function (i) {
 
-                $.getJSON("./history/" + i + ".json", function (data) {
+                return function (data) {
                     
                     var dataServers = Object.keys(data);
 
@@ -165,12 +164,19 @@ jQuery(document).ready(function($) {
                     sTH.attr("colspan", servers.length);
                     sep.attr("colspan", servers.length + 1);
 
-                    log[tempC] = data;
+                    log[i] = data;
 
-                    if (++tempC > index.end)
+                    if (++tempC > index.end - index.start)
                         ok();
 
-                });
+                };
+
+            };
+
+            // Fetch data and set server list
+            for (var i = data.start; i <= data.end; i++) {
+
+                $.getJSON("./history/" + i + ".json", processHistory(i));
 
             }
 
