@@ -196,8 +196,24 @@ jQuery(document).ready(function($) {
                 }
 
             });
+            
+            var dom = $.parseHTML(tempDOM);
+            $(dom).click(function () {
 
-            trs.push(tempDOM);
+                exampleList = {};
+                serverList.forEach(function (s) {
+
+                    exampleList[s] = v[s];
+
+                    $(document.querySelector("div.server[data-name=" + s + "] > p.example")).text(exampleList[s]);
+
+                });
+
+                $(document.activeElement).blur();
+
+            });
+
+            trs.push(dom);
 
         });
 
