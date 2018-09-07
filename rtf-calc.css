@@ -1,9 +1,9 @@
-section.history > .table-container table th, section.history > .table-container table td:not(.sep), section h2, section h3, section h4, span, p, img, em {
+span, p, img, em, section h2, section h3, section h4, section.history > .table-container table th, section.history > .table-container table td:not(.sep) {
   color: #fff;
   text-stroke: 0.3em rgba(255, 255, 255, 0.2);
   -webkit-text-stroke: 0.3em rgba(255, 255, 255, 0.2);
   word-wrap: break-word;
-  font-family: "Gothic A1", sans-serif;
+  font-family: 'Gothic A1', sans-serif;
 }
 
 section.history > .table-container table th, section.history > .table-container table td:not(.sep) {
@@ -30,15 +30,18 @@ header > div h1 {
   font-size: 4rem;
   word-wrap: break-word;
 }
+
 header > div h1 span {
   display: inline-block;
   vertical-align: sub;
 }
+
 header > div h1 span.small {
   font-size: 3rem;
   vertical-align: -moz-middle-with-baseline;
   vertical-align: -webkit-baseline-middle;
 }
+
 header > div p {
   font-size: 1.4rem;
 }
@@ -49,74 +52,93 @@ section {
   display: inline-block;
   vertical-align: top;
 }
+
 section:not(:last-of-type) {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 @media screen and (max-width: 799px) {
   section:not(:last-of-type) {
     border-right: none !important;
   }
 }
+
 section section {
   border: none !important;
 }
+
 section h2, section h3, section h4 {
   color: #fff;
 }
+
 section h2 {
   font-size: 2rem;
   padding: 0;
   margin: 0;
 }
+
 section.introduction {
   width: 280px;
   max-width: calc(90vw - 10px);
 }
+
 @media screen and (max-width: 799px) {
   section.introduction {
     width: calc(90vw - 10px);
   }
 }
+
 section.calculation .result {
   display: block;
   padding: 0;
 }
+
 section.calculation div.server > *, section.calculation div.answer > * {
   display: inline-block;
 }
+
 section.calculation section.expecting-answer {
   margin: 0;
 }
+
 section.calculation section.answer {
   width: calc(90vw - 60px);
   max-width: 180px;
   padding-right: 75px;
   position: relative;
 }
+
 @media screen and (max-width: 799px) {
   section.calculation section.answer {
     max-width: calc(90vw - 60px);
   }
 }
+
 section.calculation section.result h3, section.calculation section.result p {
   display: inline-block;
 }
+
 section.calculation section.result h3 {
   margin-right: 10px;
 }
+
 section.calculation section > div {
   height: 2rem;
 }
+
 section.calculation h3 {
   font-size: 1.5rem;
   margin: 0 0 10px;
 }
+
 section.calculation h4 {
   margin: 5px 15px 5px 0;
 }
+
 section.calculation p {
   margin: 5px 0;
 }
+
 section.calculation button {
   position: absolute;
   top: 18px;
@@ -127,21 +149,26 @@ section.calculation button {
   outline: none;
   padding: 5px 10px;
   line-height: 14px;
-  transition: background-color 0.4s, border-color 0.4s;
+  -webkit-transition: background-color .4s, border-color .4s;
+  transition: background-color .4s, border-color .4s;
   cursor: pointer;
 }
+
 section.calculation button:hover, section.calculation button:focus {
   background-color: rgba(255, 255, 255, 0.2);
   border-color: white;
 }
+
 section.calculation button img {
   height: 14px;
   vertical-align: middle;
 }
+
 section.calculation button span {
   font-size: 14px;
   vertical-align: middle;
 }
+
 section.history > .table-container {
   margin-top: 24px;
   padding: 5px 8px;
@@ -151,9 +178,11 @@ section.history > .table-container {
   overflow-y: hidden;
   max-width: calc(90vw - 16px);
 }
+
 section.history > .table-container table {
   word-break: keep-all;
 }
+
 section.history > .table-container table th, section.history > .table-container table td:not(.sep) {
   color: #fff;
   text-align: left;
@@ -163,24 +192,50 @@ section.history > .table-container table th, section.history > .table-container 
   vertical-align: top;
   padding: 5px 20px 5px 5px;
 }
+
 section.history > .table-container table tr.servers > th {
   font-weight: 400;
 }
+
 section.history > .table-container table tr.sep-container {
   background-color: #fff;
   height: 1px;
+}
+
+section.history > .table-container table tbody.history-tbody > tr {
+  position: relative;
+}
+
+section.history > .table-container table tbody.history-tbody > tr::after {
+  content: '';
+  cursor: pointer;
+  -webkit-transition: background-color .4s;
+  transition: background-color .4s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  transition: background-color .4s;
+  border-radius: 3px;
+}
+
+section.history > .table-container table tbody.history-tbody > tr:hover::after {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 footer {
   margin-top: 20px;
   line-height: 2rem;
 }
+
 footer img {
   min-width: 6rem;
   width: 5vw;
 }
+
 footer span {
   margin-left: 15px;
 }
-
 /*# sourceMappingURL=rtf-calc.css.map */
