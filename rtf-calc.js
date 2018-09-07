@@ -144,13 +144,13 @@ jQuery(document).ready(function($) {
 
             index = data;
 
-            var tempC = 0;
+            var tempC = data.start;
 
             // Fetch data and set server list
             for (var i = data.start; i <= data.end; i++) {
 
                 $.getJSON("./history/" + i + ".json", function (data) {
-
+                    
                     var dataServers = Object.keys(data);
 
                     dataServers.forEach(function (s) {
@@ -167,7 +167,7 @@ jQuery(document).ready(function($) {
 
                     log[tempC] = data;
 
-                    if (++tempC > index.end - index.start)
+                    if (++tempC > index.end)
                         ok();
 
                 });
@@ -199,6 +199,7 @@ jQuery(document).ready(function($) {
             tempDOM += "</tr>";
             
             var dom = $.parseHTML(tempDOM)[0];
+            
             $(dom).click(function () {
 
                 exampleList = {};
@@ -223,11 +224,11 @@ jQuery(document).ready(function($) {
     }).then(function () {
 
         // Append trs
-        for (var i = index.start; i <= index.end; i++) {
+        trs.forEach(function (tr) {
 
-            table.append(trs[i]);
+            table.append(tr);
 
-        }
+        });
 
     }).catch(function (x) {
 
