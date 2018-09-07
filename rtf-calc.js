@@ -111,7 +111,6 @@ jQuery(document).ready(function($) {
 
             $.each(remainedList, function (k, v) {
 
-
                 if (answerValuePool.includes(v)) // Unfortunate Answer (High)
                     score += 2;
                 else if (originValuePool.includes(v)) // Unfortunate Answer(Low)
@@ -168,7 +167,7 @@ jQuery(document).ready(function($) {
 
                     log[tempC] = data;
 
-                    if (++tempC > index.end)
+                    if (++tempC > index.end - index.start)
                         ok();
 
                 });
@@ -196,8 +195,10 @@ jQuery(document).ready(function($) {
                 }
 
             });
+
+            tempDOM += "</tr>";
             
-            var dom = $.parseHTML(tempDOM);
+            var dom = $.parseHTML(tempDOM)[0];
             $(dom).click(function () {
 
                 exampleList = {};
