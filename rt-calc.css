@@ -1,7 +1,5 @@
 span, p, img, em, section h2, section h3, section h4, section.history > .table-container table th, section.history > .table-container table td:not(.sep) {
   color: #fff;
-  text-stroke: 0.3em rgba(255, 255, 255, 0.2);
-  -webkit-text-stroke: 0.3em rgba(255, 255, 255, 0.2);
   word-wrap: break-word;
   font-family: 'Gothic A1', sans-serif;
 }
@@ -29,6 +27,8 @@ header > div h1 {
   margin: 0;
   font-size: 4rem;
   word-wrap: break-word;
+  text-stroke: 0.22em rgba(255, 255, 255, 0.2);
+  -webkit-text-stroke: 0.22em rgba(255, 255, 255, 0.2);
 }
 
 header > div h1 span {
@@ -206,23 +206,18 @@ section.history > .table-container table tbody.history-tbody > tr {
   position: relative;
 }
 
-section.history > .table-container table tbody.history-tbody > tr::after {
-  content: '';
+section.history > .table-container table tbody.history-tbody > tr:hover {
   cursor: pointer;
-  -webkit-transition: background-color .4s;
-  transition: background-color .4s;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: transparent;
-  transition: background-color .4s;
-  border-radius: 3px;
 }
 
-section.history > .table-container table tbody.history-tbody > tr:hover::after {
+section.history > .table-container table tbody.history-tbody > tr:hover > td {
   background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+section.history > .table-container table tbody.history-tbody > tr td {
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
 }
 
 footer {
@@ -238,4 +233,4 @@ footer img {
 footer span {
   margin-left: 15px;
 }
-/*# sourceMappingURL=rtf-calc.css.map */
+/*# sourceMappingURL=rt-calc.css.map */

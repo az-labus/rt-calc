@@ -2,11 +2,9 @@ $wtr: rgba(255, 255, 255, .2);
 
 %text {
     color: #fff;
-    text-stroke: .3em $wtr;
-    -webkit-text-stroke: .3em $wtr;
     word-wrap: break-word;
     font-family: 'Gothic A1', sans-serif;
-}
+} 
 
 %no-stroke {
     text-stroke: 0 !important;
@@ -36,6 +34,8 @@ header > div {
         margin: 0;
         font-size: 4rem;
         word-wrap: break-word;
+        text-stroke: .22em $wtr;
+        -webkit-text-stroke: .22em $wtr;
 
         span {
             display: inline-block;
@@ -202,24 +202,18 @@ section {
             tbody.history-tbody > tr {
                 position: relative;
 
-                &::after {
-                    content: '';
+                &:hover {
                     cursor: pointer;
-                    transition: background-color .4s;
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    background-color: transparent;
-                    transition: background-color .4s;
-                    border-radius: 3px;
                 }
 
-                &:hover::after {
+                &:hover > td {
                     background-color: rgba(255, 255, 255, .2);
+                    border-radius: 4px;
                 }
 
+                td {
+                    transition: background-color .3s;
+                }
             }
         }
     }
